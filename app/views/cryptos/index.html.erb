@@ -8,9 +8,9 @@
       <th>Name</th>
       <th>Current Price</th>
       <th>Rank</th>
-      <th>1 HR Change</th>
-      <th>24 HR Change</th>
-      <th>7 Days Change</th>
+      <th>1 HR </th>
+      <th>24 HR </th>
+      <th>7 Days </th>
       <th>Total Current Value</th>
       <th>Total Paid</th>
       <th>Profit/Loss</th>
@@ -30,7 +30,7 @@
             <% if crypto.symbol == x["symbol"] %>
                <td><%= link_to x["name"], crypto %></td>
                <td>$<%= x["price_usd"] %></td>
-               <td><%= x["Rank"] %></td>
+               <td><%= x["rank"] %></td>
                <td><%= x["percent_change_1h"] %>%</td>
                <td><%= x["percent_change_24h"] %>%</td>
                <td><%= x["percent_change_7d"] %>%</td>
