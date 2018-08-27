@@ -24,9 +24,10 @@ class CryptosController < ApplicationController
     require 'json'
     @url = 'https://api.coinmarketcap.com/v1/ticker/'
     @uri = URI(@url)
-    @responce = Net::HTTP.get(@uri)
-    @show_crypto = JSON.parse(@responce)
-  end
+    @response = Net::HTTP.get(@uri)
+    @show_crypto = JSON.parse(@response)
+  end 
+  
 
   # GET /cryptos/new
   def new
@@ -89,7 +90,7 @@ class CryptosController < ApplicationController
     end
     
     def correct_user
-      @correct = current_user.cryptos.find_by(id: params[:id])
+      @correct = current_user.cryptos.find_by(id: params[:id])    
       redirect_to cryptos_path, notice: "Hey! Not authorised to edit this entry" if @correct.nil?
     end
 end

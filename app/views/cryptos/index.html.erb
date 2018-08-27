@@ -41,7 +41,7 @@
             <% end %>
          <% end %>
         
-          <td>£<%= crypto.cost_per %></td>
+          <td>$<%= crypto.cost_per %></td>
           <td><%= crypto.amount_owned %></td>
         </tr>
        <% end %>
@@ -49,12 +49,10 @@
   </tbody>
 </table>
 
-<br/>
-<br/>
+<br/><br/>
 
+<strong>Portfolio Profit/Loss: </strong> <%= number_to_currency(@profit_loss) %>
 
-<strong>Portfolio Profit/Loss: </strong> <%=number_to_currency(@profit_loss) %>
-<br/>
-<br/>
+<br/><br/>
 
 <%= link_to 'New Crypto', new_crypto_path, class: "btn btn-default" %>

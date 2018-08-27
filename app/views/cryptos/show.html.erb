@@ -12,22 +12,23 @@
   </div>
   <div class="panel-body">
   
+  
   <h1><%= @crypto.symbol.upcase %></h1>
 
 <br/><br/>
 
 <p>
   <strong>Current Price:</strong> 
-  <%= number_to_currency(crypto._price) %>
+  <%= number_to_currency(crypto_price) %>
 </p>
 
 <p>
   <strong>Rank:</strong> 
-  <%= crypto._rank %>
+  <%= crypto_rank %>
 </p>
 
 <p>
-  <h1<%= @crypto.symbol %>
+  <h1><%= @crypto.symbol %></h1>
 </p>
 
 <p>
@@ -39,8 +40,7 @@
   <strong>Amount owned:</strong>
   <%= @crypto.amount_owned %>
 </p>
-
-<div>
+</div>
   <div class="panel-footer">
     <%= link_to 'Edit', edit_crypto_path(@crypto) %> |
     <%= link_to 'Delete Crypto Currency', crypto_path(@crypto), method: :delete, data: { confirm: 'Are you sure?' } %> |
