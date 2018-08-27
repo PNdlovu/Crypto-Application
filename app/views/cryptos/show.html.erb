@@ -1,8 +1,8 @@
 <% for x in @show_crypto %>
     <% if @crypto.symbol.upcase == x["symbol"] %>
-      <% crypto_name x["name"] %>
-      <% crypto_price x["price_usd"] %>
-      <% crypto_rank x["rank"] %>
+      <% crypto_name = x["name"] %>
+      <% crypto_price = x["price_usd"] %>
+      <% crypto_rank = x["rank"] %>
     <% end %>
 <% end %>
 
@@ -11,7 +11,6 @@
     <h3 class="panel-title"><%= crypto_name %></h3>
   </div>
   <div class="panel-body">
-  
   
   <h1><%= @crypto.symbol.upcase %></h1>
 
@@ -24,11 +23,7 @@
 
 <p>
   <strong>Rank:</strong> 
-  <%= crypto_rank %>
-</p>
-
-<p>
-  <h1><%= @crypto.symbol %></h1>
+  <%= @crypto.rank %>
 </p>
 
 <p>
